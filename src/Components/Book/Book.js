@@ -10,11 +10,11 @@ import './Book.css';
 
 const Book = () => {
    
-  const {bookId} = useParams(); //book button a click korle oi card ar data ta jabe
+  const { bookId } = useParams(); //book button a click korle oi card ar data ta jabe
   const history = useHistory();
  
   const handleBooking = () => {
-      history.push("/login");
+      history.push(`/hotel/${bookId}`);
       };
 
 
@@ -26,7 +26,7 @@ const Book = () => {
           setBookDetails(info)
       },[])
       console.log(bookDetails);
-      console.log(fakeData);
+     
 
     return (
    <div>

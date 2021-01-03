@@ -22,7 +22,7 @@ const Login = () => {
  const history = useHistory();
  const location = useLocation();
 
- let { from } = location.state || { from: { pathname: "/hotel" } };
+ let { from } = location.state || { from: { pathname: "/" } };
 
   const handleGoogleSign = () => {
     

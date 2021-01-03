@@ -7,8 +7,8 @@ const Details = (props) => {
         <div  style={{marginTop: '150px'}}>
             <h1>{name}</h1>
             <p>{details}</p>
-            <Link to ={`/book${id}`}>
-                <button style={{backgroundColor: 'orange', border: 'none', height:'40px', width:'80px', borderRadius:'5px'}}>book>></button>
+            <Link to ={`/book/${id}`}>
+                <button style={{backgroundColor: 'orange', border: 'none', height:'40px', width:'80px', borderRadius:'5px'}}>book</button>
             </Link>
             
         </div>
