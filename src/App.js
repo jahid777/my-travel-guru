@@ -26,7 +26,7 @@ const [loggedInUser, setLoggedInUser] = useState({});
 
   return (
      <div style={{ backgroundImage: `linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${bg})`}} className="bg-design">   
-      <UserContext.Provider value = {[loggedInUser, setLoggedInUser]}>
+      <UserContext.Provider value={[loggedInUser, setLoggedInUser]}>
       
        <Router>
        <Header></Header>
@@ -37,10 +37,10 @@ const [loggedInUser, setLoggedInUser] = useState({});
            <Route path="/login">
               <Login></Login>
            </Route>
-           <Route path="/book:bookId">
+           <Route path="/book/:bookId">
               <Book></Book>
            </Route>
-           <PrivateRoute path="/hotel">
+           <PrivateRoute path="/hotel/:id">
               <Hotel></Hotel>
            </PrivateRoute>
 
