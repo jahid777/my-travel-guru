@@ -19,15 +19,17 @@ import HotelDetails from './Components/HotelDetails/HotelDetails';
 
 
 export const UserContext = createContext();
-export const PlaceContext = createContext();
+export const TravelContext = createContext();
+
 
 const App = () => {
 const [loggedInUser, setLoggedInUser] = useState({});
+const [travelDataContext, setTravelDataContext] = useState({});
 
   return (
      <div style={{ backgroundImage: `linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${bg})`}} className="bg-design">   
       <UserContext.Provider value = {[loggedInUser, setLoggedInUser]}>
-      
+      <TravelContext.Provider value= {[ travelDataContext, setTravelDataContext]}>
        <Router>
        <Header></Header>
          <Switch>
@@ -37,7 +39,7 @@ const [loggedInUser, setLoggedInUser] = useState({});
            <Route path="/login">
               <Login></Login>
            </Route>
-           <Route path="/book:bookId">
+           <Route path="/book/:bookId">
               <Book></Book>
            </Route>
            <PrivateRoute path="/hotel">
@@ -47,8 +49,8 @@ const [loggedInUser, setLoggedInUser] = useState({});
            <Route path="/hotelDetails">
                <HotelDetails></HotelDetails>
            </Route>
-           
-           <Route exact path="/home">
+
+           <Route exact path="/">
               <Home></Home>
            </Route>
            <Route  path="*">
@@ -56,7 +58,7 @@ const [loggedInUser, setLoggedInUser] = useState({});
            </Route>
          </Switch>
        </Router>
-
+       </TravelContext.Provider>
        </UserContext.Provider>
        </div>
   );

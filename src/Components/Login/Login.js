@@ -19,10 +19,14 @@ if(firebase.apps.length === 0){
 const Login = () => {
   const googleProvider = new firebase.auth.GoogleAuthProvider();
  const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+
  const history = useHistory();
  const location = useLocation();
+ 
 
  let { from } = location.state || { from: { pathname: "/hotel" } };
+
+
 
   const handleGoogleSign = () => {
     
@@ -30,9 +34,11 @@ const Login = () => {
     .then(function(result) {
       const {displayName, email} = result.user;
       const signedInUser = {name: displayName, email}
-      
+       
+      console.log(signedInUser);
       setLoggedInUser(signedInUser);
       history.replace(from);
+
       
     })
     .catch(function(error) {
@@ -52,12 +58,17 @@ const Login = () => {
     <div style={{textAlign: 'center'}}>
 
        <div onClick={handleGoogleSign}     className="google-sign-btn">
-         <div>
+         {/* <div>
          <img className="google-icon" src={googleIcon} alt=""/>
          </div>
           <div>
           <span className="google-text">Continue With Google</span>
-          </div>
+          </div> */}
+
+          <div className="google-sign-btn">
+         <img className="google-icon" src={googleIcon} alt=""/>
+         <span className="google-text">Continue With Google</span>
+       </div>
        </div>
 
 

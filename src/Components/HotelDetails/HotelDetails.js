@@ -1,9 +1,14 @@
 import React from 'react';
+import { useParams } from 'react-router-dom';
 
-const HotelDetails = () => {
+const HotelDetails = (props) => {
+    // const {placeId, id, name, details, rating, img} = props.singleHotelData;
+    // const {bookId} = useParams();
+    
     return (
         <div>
-            <h1>hotel description</h1>
+            {/* <img src={img} alt=""/>
+            <p>{name}</p> */}
         </div>
     );
 };
